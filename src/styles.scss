@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --cyan-500: #57e4ff;
+  --blue-600: #1c52c5;
+  --blue-800: #0e387a;
+  --text-grey: #474747;
+  --text-white: #fff;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/gotham-light.woff2") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/gotham-book.woff2") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/gotham-bold.woff2") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/gotham-black.woff2") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gotham", sans-serif;
+  font-weight: 400;
+  color: var(--text-grey);
+  overflow-x: hidden;
+
+  .section {
+    min-height: 100vh;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  p:not(:last-child) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@for $wid from 1 through 100 {
+  .w-#{$wid} {
+    width: percentage($wid / 100);
+  }
+}
+
+@media (max-width: 768px) {
+  @for $wid from 1 through 100 {
+    .mw-#{$wid} {
+      width: percentage($wid / 100);
+    }
+  }
+}
+
