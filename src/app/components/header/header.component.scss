@@ -1,0 +1,43 @@
+header {
+  background-color: var(--cyan-500);
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  img {
+    position: absolute;
+    left: 5%;
+    height: 100%;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      gap: 3rem;
+
+      li {
+        a {
+          text-decoration: none;
+          color: var(--text-grey);
+
+          &:hover, &.activebutton {
+            // color: var(--text-white);
+            text-decoration: underline;
+            // font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
