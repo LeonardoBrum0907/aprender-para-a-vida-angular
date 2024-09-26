@@ -1,8 +1,7 @@
 import { Routes } from '@angular/router';
-import { ContactComponent } from './pages/contact/contact.component';
 import { DonationsComponent } from './pages/donations/donations.component';
 import { HomeComponent } from './pages/home/home.component';
-import { VolunteersComponent } from './pages/volunteers/volunteers.component';
+import { SoonPageComponent } from './pages/soon-page/soon-page.component';
 
 export const routes: Routes = [
   {
@@ -16,8 +15,7 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    component: ContactComponent
-
+    component: SoonPageComponent
   },
   {
     path: 'help',
@@ -27,11 +25,9 @@ export const routes: Routes = [
   {
     path: 'help/donations',
     component: DonationsComponent
-
   },
   {
     path: 'help/volunteers',
-    component: VolunteersComponent
-
+    component: SoonPageComponent
   }
 ];

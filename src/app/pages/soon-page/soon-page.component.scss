@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .gif-box {
+    background-color: #ebebeb;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+}
