@@ -1,9 +1,17 @@
 :root {
   --cyan-500: #57e4ff;
+  --cyan-600: #0090C1;
+  --cyan-700: #046E8F;
+  --cyan-800: #183446;
+  --cyan-900: #022F40;
+
   --blue-600: #1c52c5;
   --blue-800: #0e387a;
+
   --text-grey: #474747;
   --text-white: #fff;
+
+  --header-height: 6rem;
 }
 
 @font-face {
@@ -45,16 +53,14 @@ body {
   font-weight: 400;
   color: var(--text-grey);
   overflow-x: hidden;
+  padding-top: var(--header-height);
 
   .section {
-    min-height: 100vh;
-    max-width: 80%;
-    margin: 0 auto;
+    min-height: calc(100vh - var(--header-height));
+    padding: 2rem 8rem;
   }
-
-  p:not(:last-child) {
+  p:not(:first-child) {
     margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 }
 
