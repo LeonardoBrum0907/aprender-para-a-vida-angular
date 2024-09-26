@@ -1,9 +1,9 @@
 :root {
   --cyan-500: #57e4ff;
-  --cyan-600: #0090C1;
-  --cyan-700: #046E8F;
+  --cyan-600: #0090c1;
+  --cyan-700: #046e8f;
   --cyan-800: #183446;
-  --cyan-900: #022F40;
+  --cyan-900: #022f40;
 
   --blue-600: #1c52c5;
   --blue-800: #0e387a;
@@ -76,5 +76,10 @@ body {
       width: percentage($wid / 100);
     }
   }
-}
 
+  body {
+    .section {
+      padding: 1rem;
+    }
+  }
+}

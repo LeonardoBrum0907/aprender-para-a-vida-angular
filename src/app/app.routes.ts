@@ -20,12 +20,17 @@ export const routes: Routes = [
 
   },
   {
-    path: 'donations',
+    path: 'help',
+    redirectTo: 'help/donations',
+    pathMatch: 'full'
+  },
+  {
+    path: 'help/donations',
     component: DonationsComponent
 
   },
   {
-    path: 'volunteers',
+    path: 'help/volunteers',
     component: VolunteersComponent
 
   }
