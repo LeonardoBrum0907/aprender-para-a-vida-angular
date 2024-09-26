@@ -3,12 +3,23 @@
   <nav>
     <ul>
       <li>
-        <a class="button" routerLink="/home" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+        <a routerLink="/home" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
           Início
         </a>
       </li>
+      <li class="submenu-box">
+        <a>Como ajudar</a>
+        <ul class="submenu">
+          <li>
+            <a routerLink="/donations" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Doações</a>
+          </li>
+          <li>
+            <a routerLink="/volunteers" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Voluntários</a>
+          </li>
+        </ul>
+      </li>
       <li>
-        <a class="button" routerLink="/contact" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+        <a routerLink="/contact" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
           Contato
         </a>
       </li>

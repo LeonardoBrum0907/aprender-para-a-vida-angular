@@ -31,12 +31,47 @@ header {
           text-decoration: none;
           color: var(--text-grey);
 
-          &:hover, &.activebutton {
+          &:hover,
+          &.activebutton {
             // color: var(--text-white);
             text-decoration: underline;
             // font-weight: bold;
           }
         }
+      }
+
+      .submenu-box {
+        position: relative;
+        .submenu {
+          display: none;
+          position: absolute;
+          // margin-top: 1rem;
+          // top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #f9f9f9;
+          border: 1px solid #ccc;
+          // padding: 3rem 3rem 3rem 1rem;
+          z-index: 1;
+          border-radius: 10px;
+          overflow: hidden;
+
+          li a {
+            height: 3rem;
+            width: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              background-color: #e4e4e4;
+            }
+          }
+        }
+      }
+
+      li:hover > .submenu {
+        display: block;
       }
     }
   }
