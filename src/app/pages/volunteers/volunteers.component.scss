@@ -1,0 +1,114 @@
+.section-1 {
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .description-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    ul {
+      margin: 2rem;
+      padding-left: 1rem;
+    }
+
+    .img-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    form {
+      padding: 2rem;
+      background: var(--gradient);
+      width: 50%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+      .inputs-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .input {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        flex: 1;
+
+        label {
+          color: white;
+          // font-size: 1.2rem;
+          font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+          height: 4rem;
+          border-radius: 10px;
+          border: none;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          padding: 1rem;
+          font-size: 1rem;
+          resize: none;
+        }
+      }
+
+      .btn-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+          background: var(--green-600);
+          padding: 1rem 4rem;
+          border: none;
+          border-radius: 10px;
+          color: white;
+          font-size: 1.1rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          transition: all 0.1s ease;
+
+          &:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+            filter: brightness(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-1 {
+    .description-container {
+      flex-direction: column;
+
+      form {
+        width: 100%;
+        padding: 2rem 1rem;
+
+        .inputs-box {
+          flex-direction: column;
+
+          .input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

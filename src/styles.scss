@@ -1,4 +1,6 @@
 :root {
+  --green-600: #43BE83;
+
   --cyan-500: #57e4ff;
   --cyan-600: #0090c1;
   --cyan-700: #046e8f;
@@ -11,6 +13,8 @@
   --text-grey: #474747;
   --light-grey: #f9f9fb;
   --text-white: #fff;
+
+  --gradient: linear-gradient(180deg, rgba(0,144,193,1) 0%, rgba(87,228,255,1) 100%);
 
   --header-height: 6rem;
   --footer-height: 10rem;
