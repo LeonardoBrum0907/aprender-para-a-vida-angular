@@ -34,55 +34,101 @@
       </div>
     </div>
 
-    <form action="">
+    <form [formGroup]="volunteerForm">
       <div class="inputs-box">
         <div class="input">
           <label for="name">Nome completo:</label>
-          <input type="text" id="name" placeholder="John Due">
+          <input type="text" id="name" formControlName="name" placeholder="John Due">
+          <div class="error__message__box">
+            <div class="error__message" *ngIf="volunteerForm.get('name')?.errors?.['required'] && volunteerForm.get('name')?.touched">
+              Nome é obrigatório!
+            </div>
+            <div class="error__message" *ngIf="volunteerForm.get('name')?.errors?.['minlength'] && volunteerForm.get('name')?.touched">
+              Nome  deve ter pelo menos 3 caracteres!
+            </div>
+          </div>
         </div>
 
         <div class="input">
-          <label for="phone-number">Telefone:</label>
-          <input type="text" id="phone-number" placeholder="(19) 99999-9999">
+          <label for="phone">Telefone:</label>
+          <input id="phone" type='text' mask="(00) 00000-0000"
+          [specialCharacters]="[' ', '(', ')', '-', '.']" [dropSpecialCharacters]="false" formControlName="phone" placeholder="(19) 99999-9999">
+          <div class="error__message__box">
+            <div class="error__message"
+              *ngIf="volunteerForm.get('phone')?.errors?.['required'] && volunteerForm.get('phone')?.touched">
+              Telefone é obrigatório!
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="inputs-box">
         <div class="input">
           <label for="email">Email:</label>
-          <input type="text" id="email" placeholder="johndue@gmail.com">
+          <input type="text" id="email" formControlName="email" placeholder="johndue@gmail.com">
+          <div class="error__message__box">
+            <div class="error__message"
+              *ngIf="volunteerForm.get('email')?.errors?.['required'] && volunteerForm.get('email')?.touched">
+              Email é obrigatório!
+            </div>
+            <div class="error__message"
+              *ngIf="volunteerForm.get('email')?.errors?.['email'] && volunteerForm.get('email')?.touched">
+              Email inválido!
+            </div>
+          </div>
         </div>
         <div class="input">
           <label for="address">Endereço:</label>
-          <input type="text" id="address" placeholder="Rua  João, 123. Jd Terras">
+          <input type="text" id="address" formControlName="address" placeholder="Rua  João, 123. Jd Terras">
+          <div class="error__message__box">
+            <div class="error__message"
+              *ngIf="volunteerForm.get('address')?.errors && volunteerForm.get('address')?.touched">
+              Endereço é obrigatório!
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="inputs-box">
         <div class="input">
           <label for="area">Área de interesse:</label>
-          <select id="area" name="area">
-            <option value="psicologia">Psicologia</option>
-            <option value="direito">Direito</option>
-            <option value="assistencia-social">Assistência Social</option>
-            <option value="acolhimento">Acolhimento</option>
-            <option value="administracao">Administração</option>
+          <select id="area" name="area" formControlName="area">
+            <option value="Psicologia">Psicologia</option>
+            <option value="Direito">Direito</option>
+            <option value="Assistencia-social">Assistência Social</option>
+            <option value="Acolhimento">Acolhimento</option>
+            <option value="Administracao">Administração</option>
           </select>
+          <div class="error__message__box">
+            <div class="error__message" *ngIf="volunteerForm.get('area')?.errors && volunteerForm.get('area')?.touched">
+              Área de interesse é obrigatória!
+            </div>
+          </div>
         </div>
 
         <div class="input">
           <label for="availability">Disponibilidade:</label>
-          <input type="text" id="availability" name="availability" placeholder="Rua  João, 123. Jd Terras">
+          <input type="text" id="availability" name="availability" formControlName="availability"
+            placeholder="Terça e Quinta, na parte da tarde.">
+          <div class="error__message__box">
+            <div class="error__message" *ngIf="volunteerForm.get('availability')?.errors && volunteerForm.get('availability')?.touched">
+              Disponibilidade é obrigatória!
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="input">
-        <label for="availability">Comentários:</label>
-        <textarea type="textarea" id="availability" name="availability"></textarea>
+        <label for="comment">Comentários:</label>
+        <textarea type="textarea" id="comment" name="comment" formControlName="comment"
+          placeholder="Gostaria muito de fazer parte da equipe."></textarea>
       </div>
 
       <div class="btn-box">
-        <button>Enviar</button>
+        <button [disabled]="!volunteerForm.valid" [ngClass]="enableButton()" (click)="createVolunter()">
+          <mat-spinner color="secondary" class="spinner-loading" *ngIf="this.submitIsLoading"></mat-spinner>
+          <span *ngIf="!this.submitIsLoading">Enviar</span>
+        </button>
       </div>
     </form>
   </div>

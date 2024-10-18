@@ -68,6 +68,25 @@ body {
   p:not(:first-child) {
     margin-top: 1rem;
   }
+
+  .error__message__box {
+    height: 1rem;
+    .error__message {
+      font-size: 14px;
+      color: red;
+      font-weight: bold;
+    }
+  }
+
+  .spinner-loading {
+    height: 2rem !important;
+  }
+
+}
+
+.div-func {
+  // border: 1px solid red;
+  margin-top: 1rem;
 }
 
 @for $wid from 1 through 100 {
