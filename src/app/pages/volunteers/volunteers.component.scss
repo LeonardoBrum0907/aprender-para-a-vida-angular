@@ -105,6 +105,17 @@
   }
 }
 
+.snackbar-success {
+  background-color: #4caf50; // Verde para sucesso
+  color: #ffffff;
+}
+
+.snackbar-error {
+  background-color: #f44336; // Vermelho para erro
+  color: #ffffff;
+}
+
+
 @media (max-width: 768px) {
   .section-1 {
     .description-container {
